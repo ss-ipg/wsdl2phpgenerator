@@ -25,9 +25,6 @@ class NaicsTest extends FunctionalTestCase
         return $this->fixtureDir.'/naics/GenericNAICS.wsdl';
     }
 
-    /**
-     * @vcr NaicsTest_testNaics
-     */
     public function testNaics()
     {
         // Perform the request.
@@ -83,9 +80,6 @@ class NaicsTest extends FunctionalTestCase
         }
     }
 
-    /**
-     * @vcr NaicsTest_testSingleNaics
-     */
     public function testSingleNaics()
     {
         $service = new \GenericNAICS();

@@ -34,8 +34,6 @@ class CurrencyConverterTest extends FunctionalTestCase
 
     /**
      * Perform a basic code generation/request/response scenario.
-     *
-     * @vcr CurrencyConverterTest_testCurrencyConvertor
      */
     public function testCurrencyConvertor()
     {
