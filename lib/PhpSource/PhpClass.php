@@ -20,7 +20,7 @@ class PhpClass extends PhpElement
     /**
      * @var array An array of strings, contains all the filenames to include for the class
      */
-    private $dependencies;
+    private $dependencies = [];
 
     /**
      * @var bool If the class should be protected by a if(!class_exists() statement
@@ -82,22 +82,18 @@ class PhpClass extends PhpElement
      */
     public function __construct($identifier, $classExists = false, $extends = '', PhpDocComment $comment = null, $final = false, $abstract = false)
     {
-        $this->dependencies = [];
-        $this->classExists  = $classExists;
-        $this->comment      = $comment;
-        $this->final        = $final;
-        $this->identifier   = $identifier;
-        $this->access       = '';
-        $this->extends      = $extends;
-        $this->constants    = [];
-        $this->variables    = [];
-        $this->functions    = [];
+        $this->classExists = $classExists;
+        $this->comment = $comment;
+        $this->final = $final;
+        $this->identifier = $identifier;
+        $this->access = '';
+        $this->extends = $extends;
         $this->indentionStr = '    '; // Use 4 spaces as indention, as requested by PSR-2
-        $this->abstract     = $abstract;
+        $this->abstract = $abstract;
     }
 
     /**
-     * @return string Returns the compete source code for the class
+     * @return string Returns the complete source code for the class
      */
     public function getSource()
     {
@@ -190,7 +186,7 @@ class PhpClass extends PhpElement
      */
     public function addImplementation($classes)
     {
-        $classes          = (array) $classes;
+        $classes = (array) $classes;
         $this->implements = array_merge((array) $this->implements, $classes);
     }
 
